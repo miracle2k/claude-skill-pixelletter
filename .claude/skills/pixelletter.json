@@ -1,0 +1,10 @@
+{
+  "name": "pixelletter",
+  "displayName": "Pixelletter Post",
+  "description": "Send physical letters and faxes via pixelletter.de API - print and mail PDFs or text as real postal mail",
+  "version": "1.0.0",
+  "author": "Claude Code Skill",
+  "keywords": ["pixelletter", "post", "letter", "mail", "fax", "print", "pdf", "germany", "api"],
+  "requiredEnvVars": ["PIXELLETTER_EMAIL", "PIXELLETTER_PASSWORD"],
+  "entrypoint": "pixelletter.md"
+}
