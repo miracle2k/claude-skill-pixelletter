@@ -1,6 +1,6 @@
 # Pixelletter Post Skill for Claude Code
 
-A Claude Code skill for sending physical letters and faxes via the [pixelletter.de](https://www.pixelletter.de) API. They print, envelope, and mail your documents as real postal mail.
+A Claude Code skill that provides knowledge about sending physical letters and faxes via the [pixelletter.de](https://www.pixelletter.de) API. They print, envelope, and mail your documents as real postal mail.
 
 ## Features
 
@@ -18,12 +18,13 @@ Run the install script:
 ./install.sh
 ```
 
-Or manually copy the `.claude` directory to your home directory:
+Or manually copy the `.claude/skills` directory to your home directory:
 ```bash
-cp -r .claude ~/
+mkdir -p ~/.claude/skills
+cp .claude/skills/pixelletter.md ~/.claude/skills/
 ```
 
-Then set your Pixelletter credentials as environment variables:
+Then set your Pixelletter credentials as environment variables in your shell profile (`~/.zshrc` or `~/.bashrc`):
 ```bash
 export PIXELLETTER_EMAIL="your-email@example.com"
 export PIXELLETTER_PASSWORD="your-password"
@@ -33,45 +34,15 @@ To get credentials:
 - Register at [pixelletter.de](https://www.pixelletter.de/de/new.php)
 - Add credit to your account
 
-For persistent configuration, add to your shell profile (`~/.bashrc`, `~/.zshrc`, etc.):
-```bash
-export PIXELLETTER_EMAIL="your-email@example.com"
-export PIXELLETTER_PASSWORD="your-password"
-```
-
 ## Usage
 
-Once installed, invoke the skill in Claude Code:
-
-```
-/pixelletter
-```
-
-Then ask Claude to perform operations like:
+Once installed, Claude Code will automatically have knowledge about the pixelletter.de API. Just ask Claude to:
 
 - "Send this PDF as a letter to Germany"
-- "Create a payment reminder letter and mail it"
+- "Create a payment reminder letter and mail it via pixelletter"
 - "Check my pixelletter account balance"
 - "Send this document as registered mail"
 - "Fax this PDF to +49 89 12345678"
-
-## Example: Sending a Letter
-
-```
-/pixelletter
-
-Send the PDF at /path/to/letter.pdf to:
-Max Mustermann
-Musterstraße 123
-12345 Berlin
-Germany
-```
-
-Claude will:
-1. Verify the PDF has correct address window positioning
-2. Send in test mode first
-3. Ask for confirmation
-4. Send the real letter
 
 ## PDF Requirements
 
